@@ -1,0 +1,53 @@
+@mixin box-shadow($top, $left, $blur, $color) {
+    -webkit-box-shadow:$top $left $blur $color ;
+    -moz-box-shadow:$top $left $blur $color ;
+    box-shadow:$top $left $blur $color ;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($velocidade) {
+    -webkit-transition: all $velocidade ease-in-out;
+    -moz-transition: all $velocidade ease-in-out;
+    -ms-transition: all $velocidade ease-in-out;
+    -o-transition: all $velocidade ease-in-out;
+    transition: all $velocidade ease-in-out;
+}
+
+@mixin transform-skewX($x){
+    -moz-transform: skewX($x);
+    -webkit-transform: skewX($x);
+    -o-transform: skewX($x);
+    -ms-transform: skewX($x);
+    transform: skewX($x);
+}
+
+@mixin botao-padrao(){
+    float: left;
+    padding: 11.5px 22px 7.5px;
+    @include border-radius(3px);
+    border-bottom: 2px solid;
+    font-weight: 700;
+    font-size: 16px;
+    @extend .transition-300;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+@mixin calc($atributo, $expressao) {
+    #{$atributo}: -moz-calc(#{$expressao});
+    #{$atributo}: -webkit-calc(#{$expressao});
+    #{$atributo}: calc(#{$expressao});
+}
+
+$desktop: 1299px;
+$tablet: 991px;
+$mobile: 767px;

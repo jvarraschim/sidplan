@@ -1,0 +1,1097 @@
+@import "mixins", "fonts";
+/*-------GERAL-------*/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: Tahoma;
+    background: #f1f1f2;
+    font-size: 16px;
+    color: #59595b;
+
+    .conteudo-pagina{
+        max-width: 1326px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        div{
+            padding: 0;
+            margin: 0;
+        }
+
+    }   
+
+}
+
+a{
+    color: #333132;
+}
+
+p{
+    line-height: 22px;
+}
+
+.home h1{
+    display: none;
+}
+
+/*-------PLACEHOLDERS-------*/
+%title {
+    font-size: 40px;
+    color: #ee1c25;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ee1c25;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+%clear {
+    content: '';
+    display: block;
+    clear: both;
+}
+/*-------PLACEHOLDERS-------*/
+
+/*-------GERAL-------*/
+
+/*-------CABEÇALHO-------*/
+header{
+    background: #f1f1f2;
+    padding: 68px 0 54px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+
+    .conteudo-pagina{
+        max-width: 1818px;
+
+        &:after{
+            @extend %clear;
+        }
+
+        .logo{
+            float: left;
+            display: block;
+
+            img{
+                display: block;
+            }
+
+        }
+
+        nav{
+            float: right;
+            margin-top: 50px;
+
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li{
+                    float: left;
+                    margin-right: 37px;
+
+                    @media screen and(max-width: 1500px){
+                        margin-right: 23px;
+                    }
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+
+                    /*-------PÁGINA SELECIONADA-------*/
+                    &.current-menu-item{
+
+                        a{
+                            background: #ee1c25;
+                            border: none;
+                            color: #ffffff;
+                            padding: 8px 16px 9px;
+                            @include border-radius(5px);
+                            position: relative;
+                            top: -4px;
+                            @include transition(300ms);
+
+                            &:hover{
+                                color: #ffffff;
+                            }
+
+                        }   
+
+                    }
+                    /*-------PÁGINA SELECIONADA-------*/
+
+                    a{
+                        padding-bottom: 5px;
+                        text-decoration: none;
+                        border-bottom: 2px solid #9d9c9c;
+                        @include transition(200ms);
+                        font-size: 25px;
+
+                        @media screen and(max-width: 1400px){
+                            font-size: 17px;
+                        }
+
+                        &:hover{
+                            color: #ee1c25;
+                            border-color: #ee1c25;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/*-------CABEÇALHO-------*/
+
+/*-------HOME-------*/
+
+/*-------BANNER-------*/
+.banner{
+    margin-top: 260px;
+
+    .rev_slider_wrapper{
+
+        .tp-simpleresponsive >ul li{
+            overflow: visible!important;
+        }
+
+        .texto-banner{
+            background: #ee1c25;
+            max-width: 100%!important;
+            width: 100%!important;
+            top: auto!important;
+            color: #ffffff;
+            padding: 43px 0!important;
+            left: 0!important;
+            text-align: center;
+
+            .conteudo-pagina{
+                white-space: normal;
+                font-size: 23px;
+                max-width: 1326px!important;
+            }
+
+        }
+
+        .tp-bullets.simplebullets.round{
+
+            .bullet{
+                width: 10px;
+                height: 10px;
+                margin-left: 11px;
+            }
+
+        }
+
+    }
+
+}
+/*-------BANNER-------*/
+
+/*-------A SIDPLAN-------*/
+body{
+
+    .a-sidplan{
+        margin-top: 194px;
+
+        h2{
+            @extend %title;
+
+            &:before{
+                content: '';
+                display: inline-block;
+                background: url("images/sprite-home.png") no-repeat;
+                width: 72px;
+                height: 91px;
+                margin-right: 44px;
+            }
+
+        }
+
+        .qualidades{
+            margin-top: 29px;
+
+            .missao, .visao, .valores{
+                padding: 32px 25px;
+                text-align: center;
+                @include border-radius(5px);
+                @include transition(300ms);
+                @include calc(width, "34.6% - 53px");
+                margin-right: 53px;
+
+                &:before{
+                    content: '';
+                    display: block;
+                    background: url("images/sprite-home.png") no-repeat;
+                    margin: 0 auto 23px;
+                    width: 112px;
+                    height: 112px;
+                    @include transition(300ms);
+                }
+
+                &:after{
+                    content: '';
+                    display: block;
+                    background: url("images/sprite-home-over.png") no-repeat;
+                    margin: 0 auto 23px;
+                    width: 112px;
+                    height: 112px;
+                    position: absolute;
+                    left: 50%;
+                    top: 32px;
+                    opacity: 0;
+                    @include transition(300ms);
+                }
+
+                &.missao{
+
+                    &:before{
+                        background-position: 0px -107px;
+                    }
+
+                    &:after{
+                        margin-left: -55.5px;   
+                    }
+
+                }
+
+                &.visao{
+
+                    &:before{
+                        width: 138px;
+                        background-position: 0 -226px;
+                    }
+
+                    &:after{
+                        background-position: 0px -119px;
+                        margin-left: -69px;
+                        width: 138px;
+                    }
+
+                }
+
+                &.valores{
+                    margin-right: 0;
+
+                    &:before{
+                        width: 134px;
+                        background-position: 0 -338px;
+                    }
+
+                    &:after{
+                        background-position: 0px -231px;
+                        margin-left: -67px;
+                        width: 134px;
+                    }
+
+                }
+
+                h3{
+                    font-size: 24px;
+                    color: #001a39;
+                    font-weight: 700;
+                    border-top: 1px solid #001a39;
+                    padding-top: 18px;
+                    @include transition(300ms);
+
+                }
+
+                p{
+                    color: #001a39;
+                    @include transition(300ms);
+                }
+
+                &:hover{
+                    background: #001a39;
+
+                    &:before{
+                        opacity: 0;
+                    }
+
+                    &:after{
+                        opacity: 1;
+                    }
+
+                    h3, p{
+                        color: #ffffff;
+                    }
+
+                    h3{
+                        border-color: #f0f0f1;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/*-------A SIDPLAN-------*/
+
+/*-------NOSSOS EMPREENDIMENTOS-------*/
+.nossos-empreendimentos{
+
+    h2{
+        @extend %title;
+        margin: 88px 0 47px!important;
+
+        &:before{
+            content: "";
+            display: inline-block;
+            background: url("images/sprite-home.png") no-repeat 0 -475px;
+            width:92px;
+            height: 90px;
+            margin-right: 24px;
+        }
+
+    }
+
+    .bloco-empreendimentos{
+
+        .bloco{
+            @include calc(width, "50% - 43px");
+
+
+            h3{
+                color: #2e2e2e;
+                font-size: 30px;
+                text-transform: uppercase;
+            }
+
+            .endereco{
+                font-size: 20px;
+            }
+
+            a{
+                position: relative;
+                z-index: 1;
+                display: block;
+                margin-top: 10px;
+                border: 3px solid #ffffff;
+                max-width: 605px;
+                text-decoration: none;
+                @include transition(300ms);
+
+                &:hover{
+                    -webkit-transform: scale(1.1, 1.1);
+                    transform: scale(1.1, 1.1);
+                }
+
+                &.index{
+                    z-index: 999999999;
+                }
+
+                img{
+                    width: 100%;
+                    display: block;
+                }
+
+                br{
+                    display: none;
+                }
+
+                b{
+                    background: #ee1c25;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                    text-align: center;
+                    display: block;
+                    width: 100;
+                    padding: 11px 0;
+                }
+
+            }
+
+        }
+
+        .bloco-esquerda{
+            margin-right: 43px;
+        }
+
+        .bloco-direita{
+            margin-left: 43px;
+        }
+
+    }
+
+    .bloco-empreendimentos-baixo{
+        margin-top: 63px;
+        padding-bottom: 45px;
+        border-bottom: 1px solid #ee1c25;
+        margin-bottom: 51px;
+    }
+
+}
+/*-------NOSSOS EMPREENDIMENTOS-------*/
+
+
+/*-------FINANCIAMENTO-------*/
+body{
+
+    .pag-financiamento{
+        margin-top: 260px;
+
+        h1{
+            @extend %title;
+            font-weight: 700;
+            margin-bottom: 50px!important;
+
+            &:before{
+                content: "";
+                display: inline-block;
+                background: url("images/sprite-financiamento.png")no-repeat;
+                width: 93px;
+                height: 90px;
+                margin-right: 23px;
+            }
+
+        }
+
+        .borda-baixo{
+            padding-bottom: 50px;
+            margin-bottom: 43px;
+            border-bottom: 1px solid #ee1c25;
+
+            .bloco-esquerda{
+                @include calc(width, "100% - 404px");
+                padding-right: 90px;
+
+                h2{
+                    font-size: 23px;
+                    color: #333132;
+                }
+
+                h3{
+                    font-size: 19px;
+                    color: #333132;
+                }
+
+                p{
+                    font-size: 19px;
+                    color: #333132;
+                    margin-bottom: 50px;
+                }
+
+                ul{
+                    color: #333132;
+                    margin-left: 19px;
+                    margin-bottom: 50px;
+
+                    li{
+                        padding-left: 15px;
+                    }
+
+                }
+
+                .margin{
+                    margin-top: 23px;
+
+                    p{
+                        margin-bottom: 0;
+                    }
+
+                    ul{
+                        margin-bottom: 26px;
+
+                    }
+
+                }
+
+            }
+
+            .bloco-direita{
+                width: 404px;
+
+                br{
+                    display: none;
+                }
+
+                a{
+                    display: block;
+                    margin-bottom: 55px!important;
+
+                    &:hover{
+
+                        img{
+                            opacity: 0.7;
+                        }
+
+                    }
+
+                    img{
+                        width: 100%;
+                        display: block;
+                        @include transition(300ms);
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/*-------FINANCIAMENTO-------*/
+
+
+/*-------PÁGINA DE EMPREENDIMENTOS-------*/
+body{
+
+    .pag-empreendimentos{
+        margin-top: 260px;
+
+        h1{
+            @extend %title;
+            border-bottom: 1px solid #ee1c25;
+            margin-bottom: 44px!important;
+
+            &:before{
+                content: "";
+                display: inline-block;
+                background: url("images/sprite-empreendimentos.png") no-repeat;
+                width: 92px;
+                height: 90px;
+                margin-right: 24px;
+            }
+        }
+
+        .empreendimento{
+            border-bottom: 1px solid #ee1c25;
+            padding-bottom: 75px;
+            margin-bottom: 69px;
+
+            .bloco-esquerda{
+                width: 773px;
+
+                a{
+                    border: 3px solid #ffffff;
+                    display: block;
+
+                    img{
+                        display: block;
+                    }
+
+                    b{
+                        background: #ee1c25;
+                        color: #ffffff;
+                        width: 100%;
+                        padding: 11px 0;
+                        text-align: center;
+                        display: block;
+                    }
+
+                }
+
+            }
+
+            .bloco-direita{
+                @include calc(width, '100% - 773px');
+                padding-left: 39px;
+                color: #333132;
+
+                h2{
+                    font-size: 31px;
+                    margin-bottom: 26px;
+                }
+
+                h3{
+                    font-size: 23px;
+                    margin-bottom: 30px;
+                }
+
+                .descricao{
+                    font-size: 23px;
+                    margin-bottom: 85px;
+                }
+
+                .detalhes{
+                    font-size: 23px;
+                }
+
+            }
+
+        }
+
+        .ultimo-empreendimento{
+            margin-bottom: 62px;
+        }
+
+    }
+
+}
+/*-------PÁGINA DE EMPREENDIMENTOS-------*/
+
+
+/*-------MINHA CASA MINHA VIDA-------*/
+
+body{
+
+    .pag-minha-casa-minha-vida{
+        margin-top: 260px;
+
+        h1{
+            @extend %title;
+            font-weight: 700;
+            margin-bottom: 51px!important;
+
+            &:before{
+                content: "";
+                display: inline-block;
+                background: url("images/sprite-minha-casa-minha-vida.png") no-repeat;
+                width: 93px;
+                height: 76px;
+                margin-right: 24px;
+            }
+
+        }
+
+        .borda-baixo{
+            border-bottom: 1px solid #ee1c25;
+            padding-bottom: 12px;
+            margin-bottom: 61px;
+
+            .bloco-esquerda{
+                width: 404px;
+
+                a{
+                    display: table;
+                    margin: 0 auto 50px!important;
+
+                    &:hover{
+
+                        img{
+                            opacity: 0.7;
+                        }
+
+                    }
+
+                    img{
+                        display: block;
+                        @include transition(300ms);
+                    }
+
+                }
+
+            }
+
+            .bloco-direita{
+                @include calc(width, "100% - 404px");
+                padding-left: 76px;
+                color: #333132;
+
+                h2{
+                    font-size: 24px;
+
+                    &.margin{
+                        margin-top: 48px;
+                    }
+
+                }
+
+                p{
+                    margin-bottom: 25px;
+                    font-size: 20px;
+                    line-height: 23px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/*-------MINHA CASA MINHA VIDA-------*/
+
+
+/*-------CONTATO-------*/
+body{
+
+    .pag-contato{
+
+        h1{
+            margin-top: 260px;
+            @extend %title;
+
+            &:before{
+                content: "";
+                background: url("images/sprite-contato.png") no-repeat;
+                display: inline-block;
+                width: 91px;
+                height: 89px;
+                margin-right: 25px;
+            }
+
+        }
+
+        .mensagem{
+            color: #333132;
+            font-size: 20px;
+        }
+
+        .gform_wrapper{
+            max-width: 100%;
+
+            form{
+                margin-top: -5px;
+
+                ul{
+
+                    &:after{
+                        @extend %clear;
+                    }
+
+                    li{
+                        float: left;
+                        width: 50%!important;
+                        padding: 0 24px 0 0!important;
+
+                        .ginput_container{
+                            margin: 0 0 18px!important;
+                            max-width: 100%!important;
+
+                            input{
+                                width: 100%;
+                                font-family: Tahoma;
+                                padding: 7.5px 15px;
+                                background: #e7e7e7;
+                                font-size: 22px;
+                                color: #333132;
+                                border: 1px solid #c9c9c9;
+                                @include border-radius(9px);
+                                -webkit-box-shadow: inset 0px 7px 15px -9px rgba(0,0,0,0.15)!important;
+                                -moz-box-shadow: inset 0px 7px 15px -9px rgba(0,0,0,0.15)!important;
+                                box-shadow: inset 0px 7px 15px -9px rgba(0,0,0,0.15)!important;
+
+                            }
+
+                            ::-webkit-input-placeholder {
+                                color: #333132;
+                            }
+
+                            :-moz-placeholder {
+                                color: #333132;
+                            }
+
+                            ::-moz-placeholder {
+                                color: #333132;
+                            }
+
+                            :-ms-input-placeholder {  
+                                color: #333132;
+                            }
+
+
+
+                        }
+
+                        &.gfield_error{
+                            background: none;
+                            border: none;
+                            margin: 0!important;
+
+                            .validation_message{
+                                display: none;
+                            }
+
+                            input{
+                                border-color: #ee1c25;
+                            }
+
+                            ::-webkit-input-placeholder {
+                                color: #ee1c25;
+                            }
+
+                            :-moz-placeholder {
+                                color: #ee1c25;
+                            }
+
+                            ::-moz-placeholder {
+                                color: #ee1c25;
+                            }
+
+                            :-ms-input-placeholder {  
+                                color: #ee1c25;
+                            }
+
+                            textarea{
+                                border-color: #ee1c25!important;
+                            }
+
+                        }
+
+                        &.campo-mensagem{
+                            margin-top: -222px!important;
+                            float: right;
+                            padding: 0 0 0 24px!important;
+
+                            textarea{
+                                @extend input;
+                                display: block;
+                                height: 169px;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                .gform_footer{
+                    margin: -72px 0 -45px 0!important;
+                    padding: 0;
+                    height: 37px;
+                    position: relative;
+                    z-index: 3;
+
+                    input{
+                        display: block;
+                        float: right;
+                        font-size: 19px;
+                        color: #363648;
+                        background: #dadada;
+                        padding: 7.5px 32px;
+                        border: none;
+                        cursor: pointer;
+                        @include border-radius(9px);
+                        @include transition(300ms);
+
+                        &:hover{
+                            background: #363648;
+                            color: #ffffff;
+                        }
+
+                    }
+
+                }
+
+                .validation_error{
+                    display: none;
+                }
+
+            }
+
+        }
+
+
+        .endereco-mapa{
+            padding-bottom: 47px;
+            border-bottom: 1px solid #ee1c25;
+            margin-bottom: 59px;
+
+            .endereco{
+                width: 380px;
+                color: #333132;
+
+                h2{
+                    font-size: 24px; 
+                }
+
+                p{
+                    font-size: 24px;
+                    line-height: 36px;
+                }
+
+            }
+
+            .mapa{
+                @include calc(width, "100% - 380px");
+                padding-left: 81px;
+
+                .wpb_wrapper{
+
+                    #wgmpmap{
+                        border: 1px solid #d2cece;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/*-------CONTATO-------*/
+
+
+/*-------RODAPÉ-------*/
+footer{
+
+    .newsletter{
+        background: #ee1c25;
+        color: #ffffff;
+        padding: 20px 0;
+
+        &:after{
+            @extend %clear;
+        }
+
+        .descricao{
+            width: 482px;
+            float: left;
+
+            h2{
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
+
+            p{
+                font-size: 12px;
+            }
+
+        }
+
+        .acompanhe{
+            width: 431px;
+            float: right;
+
+            h2{
+                font-size: 20px;
+                margin-bottom: 2px;
+            }
+
+            p{
+                font-size: 12px;
+            }
+
+        }
+
+    }
+
+    .site-info{
+        background: #001a39;
+        color: #ffffff;
+        padding: 40px 0;
+
+        .conteudo-pagina{
+            max-width: 1818px;
+
+            &:after{
+                @extend %clear;
+            }
+
+            ul{
+                list-style: none;
+                float: left;
+                margin-top: 46px;
+
+                li{
+                    display: inline-block;
+                    margin-right: 41px;
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+
+                    a{
+                        color: #ffffff;
+                        text-decoration: none;
+                        font-size: 18px;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+
+                    }
+
+                    &.current_page_item{
+
+                        a{
+                            font-weight: 700;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .telefone{
+                float: right;
+                font-size: 37px;
+                font-weight: 700;
+
+                &:after{
+                    content: "";
+                    display: inline-block;
+                    background: url("images/sprite-footer.png") no-repeat;
+                    width: 64px;
+                    height: 63px;
+                    margin-left: 15px;   
+                }
+
+                small{
+                    font-size: 25px;
+                }
+
+            }
+
+        }
+
+    }
+
+    .criado{
+        background: #001025;
+        color: #ffffff;
+
+        .conteudo-pagina{
+            max-width: 1818px;
+            font-size: 12px;
+            padding: 17px 15px;
+
+            span{
+
+                a{
+                    color: #ffffff;
+                    text-decoration: none;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.hover-empreendimento{
+    display: none;
+    position: fixed;
+    background: #000000;
+    opacity: 0.3;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 999999;
+}
+/*-------RODAPÉ-------*/
