@@ -36,7 +36,7 @@
     <div class="criado">
         <div class="conteudo-pagina">
             <span>
-                Criado por <a href="http://www.detres.com" target="_blank">Détres Comunicação</a>
+                Criado por <a href="http://www.detres.com" target="_blank">D&eacute;tres Comunica&ccedil;&atilde;o</a>
             </span>
         </div>
     </div>

@@ -169,7 +169,7 @@ else
 
 }
 		
-$this->code.='scrollwheel: '.$this->map_scrolling_wheel.',
+$this->code.='scrollwheel: false,
 		
 		panControl: '.$this->map_pan_control.',
 		
